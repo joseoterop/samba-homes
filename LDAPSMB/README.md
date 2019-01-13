@@ -16,25 +16,19 @@ Modelo cliente - servidor de una server samba con un backend basado en ldap
 * Docker PAM para validar los usuarios ldap/unix/samba y montar el recurso compartido en su home.
 
   
-Configuracio d'acceś al servidor LDAP:
+#### Configuración del acceso:
 
--Per usuaris unix:
-  - Samba requereix que els usuaris unix existeixin, poden ser locals o de xarxa via LDAP.
-   El servidor samba ha d'estat configurat amb nscd i nslcd per poder accedir al ldap. Per
-   poder confirmar i provar que tot està ben configurat, utilitzarem les eines getent  per poder
-   llistar tots els usuaris i grups de xarxa.
+* Usuarios UNIX:
+  - Samba requiere que los usuarios existan, ya sean locales o ldap, para ello el servidor debe tener los demonios `nscd` y `nslcd` activos-
 
-- Per als homes:
-  - Cal que els usuaris tinguin un directori home. Els usuaris locals ja tenen un directori al crear-se,
-   cal crear els directoris als usuaris LDAP i assignar-li la propietat i el grup apropiat.
+* Homes:
+  - Los usuarios locales ya tienen un home asignado cuando se crean, para los usuarios no locales, este debe de ser creado y administrado de la forma adecuada.
    
-- Per als usuari samba:
-  - Cal crear els comptes d'usuari samba (han d'existir el mateix usuari unix o ldap).
-   Per a cada usuari crearem el seu compte amb l'ordre *smbpasswd* i assignant-li el passwd de samba.
-   Es desarà en la base de dades ldap.
+* Usuarios SAMBA:
+  - Para usar la orden `smbpasswd` los usuarios deben existir anteriormente, ya sean locales o de ldap.
 
-- El hostpam:
-   - Necessitarem un hostpam ben configurat per tal d'accedir als usuaris locals i als LDAP i utilitzant pam_mount.so per        tal de muntar dins del home dels usuaris un home de xarxa via samba. Necessitarem configurar el pam_mount.conf.xml que      està a la ruta: */etc/security/pam_mount.conf.xml* per muntar el recurs samba dels homes.
+* El hostpam:
+   - En el servidor PAM debemos modificar el archivo `/etc/security/pam_mount.conf.xml` de cara a montar el recurso externo.
 
 ### Cofiguració del servidor samba-ldap:
 
@@ -323,7 +317,6 @@ sambaGroupType: 4
 displayName: Replicators
 
 ```
-
 
 
 
