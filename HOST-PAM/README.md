@@ -2,7 +2,7 @@
 ## JOSE OTERO PEREZ ESCOLA DEL TREBALL ASIX 
 
 
-Host pam que crea los homes del usuarios y monta un recurso cifs al mimso, se debe usar la opción **--privileged**.
+Host pam que crea los homes del usuarios y monta un recurso cifs al mimso se debe usar la opción **--privileged**.
 
 #### Ejecución
 
@@ -62,5 +62,4 @@ total 0
 drwxr-xr-x. 2 pere users 0 Jan 13 19:47 pere
 
 ```
-
 
