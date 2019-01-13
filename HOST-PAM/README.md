@@ -2,9 +2,9 @@
 ## JOSE OTERO PEREZ ESCOLA DEL TREBALL ASIX 
 
 
-Host pam que crea los homes del usuarios y monta un recurso cifs al mimso se debe usar la opción **--privileged**.
+Host pam que crea los homes del usuarios y monta un recurso cifs al mimso, se debe usar la opción **--privileged**.
 
-#### Execució
+#### Ejecución
 
 ```
 docker run --rm --name host --hostname host --network sambanet --privileged -it joterop/host-pam
