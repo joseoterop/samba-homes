@@ -11,7 +11,7 @@ docker run --rm --name ldap --hostname ldap --network sambanet -d joterop/ldap-s
 
 docker run --rm --name host --hostname host --network sambanet --privileged -it joterop/host-pam
 
-docker run --rm --name samba --hostname samba --network sambanet -- privileged -it joterop/ldapsam
+docker run --rm --name samba --hostname samba --network sambanet --privileged -it joterop/ldapsam
 
 ```
 

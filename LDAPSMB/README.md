@@ -99,8 +99,8 @@ docker run --rm --name samba --hostname samba --network sambanet -- privileged -
 ```
 
 /etc/smbldap-tools/smbldap.conf
-  - slaveLDAP="ldap://172.19.0.2/"
-  - masterLDAP="ldap://172.19.0.2/"
+  - slaveLDAP="ldap://ldap"
+  - masterLDAP="ldap://ldap"
   - ldapTLS="0"
   - suffix="dc=edt,dc=org"
   - userdn="ou=usuaris,${suffix}"
