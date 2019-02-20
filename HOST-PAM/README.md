@@ -54,12 +54,12 @@ pam_mount.conf.xml :
 
 ```
 [root@host docker]# su - pere
+Creating directory '/tmp/home/pere'.
 reenter password for pam_mount:
-[pere@host ~]$ pwd
-/tmp/home/pere
-[pere@host ~]$ ll
-total 0
-drwxr-xr-x. 2 pere users 0 Jan 13 19:47 pere
+[pere@host ~]$ mount -t "cifs"
+//samba/pere on /tmp/home/pere/pere type cifs (rw,relatime,vers=default,cache=strict,username=pere,uid=5001,forceuid,gid=100,forcegid,addr=172.19.0.3,file_mode=0755,dir_mode=0755,soft,nounix,serverino,mapposix,rsize=1048576,wsize=1048576,echo_interval=60,actimeo=1)
+[pere@host ~]$ 
+
 
 ```
 
